@@ -1,0 +1,13 @@
+var main = document.getElementsByTagName("body");
+main = main[0];
+print(main);
+
+function print(ths){
+for(var iiiiii = 0;iiiiii<ths.childElementCount;iiiiii++){
+if(ths.children[iiiiii].firstElementChild){
+print(ths.children[iiiiii]);
+}else{
+console.log(ths.children[iiiiii]);
+}
+}
+}
