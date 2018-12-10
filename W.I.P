@@ -1,0 +1,61 @@
+var user = document.getElementById('login_field');
+var pass = document.getElementById('password');
+var userval = user.value;
+var passval = pass.value;
+var chars = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M','0','1','2','3','4','5','6','7','8','9','\'','"',';',':',',','.','<','>','/','?','[',']','{','}','\\','|','`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+'];
+user.value = "";
+pass.value = "";
+var sv = 15;
+var ev = 47;
+var ucur;
+var urw;
+var pcur = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var count = 0;
+start();
+
+
+function start(){
+  //if(ucur!=[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]){
+    pcur=cycle();
+    pass.value=translate(pcur,"");
+    console.log(pass.value);
+    console.log(pcur);
+    count++;
+    if(count<20);
+    start();
+  //}  
+}
+function cycle(){
+pcur[pcur.length-1]++;
+  for(var iii = pcur.length;iii>0;iii--){
+    if(pcur[iii]==95){
+      pcur[iii]=0;
+      pcur[iii-1]++;
+    }
+  }
+  return pcur;
+}
+
+function translate(raw,trnslt){
+  for(var iii = 0;iii<raw.length;iii++){
+    trnslt+=chars[raw[iii]];
+  }
+  return trnslt;
+}
+
+
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+console.log(userval);
+console.log(passval);
+console.log(user.value.length);
+console.log(pass.value.length);
