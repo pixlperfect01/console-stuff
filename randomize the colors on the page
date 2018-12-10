@@ -1,0 +1,23 @@
+var main = document.getElementsByTagName("body");
+console.log("hi");
+main = main[0];
+var optns = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','F'];
+flash(main,'#');
+
+function flash(ths,curr){
+  for(var iiiiii=0;iiiiii<ths.childElementCount;iiiiii++){
+    if(ths.children[iiiiii].firstElementChild){
+      flash(ths.children[iiiiii],'#');
+    }else{
+      for(var iiiiiii=0;iiiiiii<6;iiiiiii++){
+        curr+=optns[Math.trunc(Math.random()*17)];
+      }
+      ths.style.backgroundColor = curr;
+      curr = '#';
+      for(var iiiiiii=0;iiiiiii<6;iiiiiii++){
+        curr+=optns[Math.trunc(Math.random()*17)];
+      }
+      ths.style.color = curr;
+    }
+  }
+}
