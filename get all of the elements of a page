@@ -1,3 +1,5 @@
+//this does not print parent elements unless they are iframes so the total number 
+//of elements may seem wrong since it will count an element but not show it
 var main = document.getElementsByTagName("body");
 main = main[0];
 var iiiii = 0;
