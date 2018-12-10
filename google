@@ -7,12 +7,10 @@ console.log(pass.length);
 console.log(inpt);
 
 function loop(){
-  if(pass!=[95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95]){
+  while(pass!=[95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95]){
     cycle();
     inpt.value=translate(pass);
     btn.click();
-  }else{
-    break;
   }
 }
 function cycle(){
