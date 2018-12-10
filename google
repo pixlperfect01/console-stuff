@@ -1,0 +1,34 @@
+var chars = ['','q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M','0','1','2','3','4','5','6','7','8','9','\'','"',';',':',',','.','<','>','/','?','[',']','{','}','\\','|','`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+'];
+var pass = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0];
+var inpt=document.getElementsByTagName('body')[0].getElementsByTagName('INPUT')[2];
+console.log(pass.length);
+console.log(inpt);
+
+function loop(){
+  if(pass!=[95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95,95]){
+    cycle();
+    inpt.value=translate(pass);
+  }else{
+    break;
+}
+function cycle(){
+  pass=inc(pass);
+}
+function inc(Lst){
+lst[lst.length-1]++;
+  for(var iii = lst.length;iii>0;iii--){
+    if(lst[iii]==95){
+      lst[iii]=1;
+      lst[iii-1]++;
+    }
+  }
+  return lst;
+}
+
+function translate(raw){
+  var trnslt='';
+  for(var iii = 0;iii<raw.length;iii++){
+    trnslt+=chars[raw[iii]];
+  }
+  return trnslt;
+}
