@@ -1,0 +1,19 @@
+var type = prompt("What kind of element?(tag name)");
+type = type.toUpperCase();
+var main = document.getElementsByTagName("body");
+main = main[0];
+var iiiii = 0;
+print(main);
+main.node
+console.log(iiiii+" elements");
+
+function print(ths){
+  for(var iiiiii = 0;iiiiii<ths.childElementCount;iiiiii++){
+    if(ths.children[iiiiii].firstElementChild){
+      print(ths.children[iiiiii]);
+    }else if(ths.children[iiiiii].nodeName==type){
+      iiiii++;
+      console.log(ths.children[iiiiii]);
+    }
+  }
+}
