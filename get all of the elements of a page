@@ -5,12 +5,12 @@ print(main);
 console.log(iiiii+" elements");
 
 function print(ths){
-for(var iiiiii = 0;iiiiii<ths.childElementCount;iiiiii++){
-iiiii++;
-if(ths.children[iiiiii].firstElementChild){
-print(ths.children[iiiiii]);
-}else{
-console.log(ths.children[iiiiii]);
-}
-}
+  for(var iiiiii = 0;iiiiii<ths.childElementCount;iiiiii++){
+    iiiii++;
+    if(ths.children[iiiiii].firstElementChild){
+      print(ths.children[iiiiii]);
+    }else{
+      console.log(ths.children[iiiiii]);
+    }
+  }
 }
